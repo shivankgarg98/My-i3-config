@@ -233,8 +233,7 @@ exec --no-startup-id feh --bg-fill --randomize /usr/share/backgrounds
 # exec --no-startup-id redshift-gtk
 
 #screen off
- bindsym $mod+Shift+m exec --no-startup-id ~/.config/i3/screenoff.sh
-
+bindsym $mod+Shift+m exec --no-startup-id ~/.config/i3/screenoff.sh 
 # compton
 # exec --no-startup-id compton --config ~/.config/compton.conf -b
 
