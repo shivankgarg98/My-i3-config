@@ -10,3 +10,6 @@ xinput set-prop <device> [--type=atom|float|int] [--format=8|16|32] <property> <
 *map the suspend to power and lid-closing
 *making zsh sexy by using prezto
 
+```bash
+xset q #power saving, screensaver and much more
+```
