@@ -12,4 +12,8 @@ xinput set-prop <device> [--type=atom|float|int] [--format=8|16|32] <property> <
 
 ```bash
 xset q #power saving, screensaver and much more
+
 ```
+#use LIGHT for brightnesss control\
+
+Also note https://unix.stackexchange.com/questions/18830/how-to-run-a-specific-program-as-root-without-a-password-prompt
