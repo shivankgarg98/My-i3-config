@@ -50,14 +50,14 @@ bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
 #change focused container
-bindsym $mod+Tab focus parent; focus right; focus child
-bindsym $mod+Shift+Tab focus parent; focus left; focus child
+#bindsym $mod+Tab focus parent; focus right; focus child
+#bindsym $mod+Shift+Tab focus parent; focus left; focus child
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+Right 	focus right
 
 # move focused window
 bindsym $mod+Shift+j move left
@@ -213,11 +213,11 @@ bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 #tapping the touchpad
 # exec xinput set-prop 13 280 1
-exec xinput set-prop 13 278 1
-
+exec xinput set-prop 13 282 1
+# exec xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1 #edited libinput-config
 # Sreen brightness controls
-bindcode 233 exec ~/brightness.sh +2
-bindcode 232 exec ~/brightness.sh -1
+bindcode 233 exec light -A 2 
+bindcode 232 exec light -U 2
 
 # music control
 bindsym $mod+XF86AudioPlay exec --no-startup-id spotify
@@ -231,11 +231,17 @@ bindsym $mod+c exec --no-startup-id google-chrome-stable
 exec --no-startup-id feh --bg-fill --randomize /usr/share/backgrounds
 # redshift--protect your eyes
 # exec --no-startup-id redshift-gtk
+# setxkbmap -option caps:swapescape in shell
+
+# swap caps lock and escape
+exec_always --no-startup-id xmodmap -e "clear lock"
+exec_always --no-startup-id xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
+exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 
 #screen off
 bindsym $mod+Shift+m exec --no-startup-id ~/.config/i3/screenoff.sh 
 # compton
 # exec --no-startup-id compton --config ~/.config/compton.conf -b
-
+# /usr/bin/setxkbmap -option "caps:swapescape"
 # network-manager
 # exec --no-startup-id nm-applet --sm-disable 
